@@ -14,7 +14,6 @@ function changeButton() {
   else {
     play.textContent = "play_arrow"
     running = false
-    resetTime()
   }
 }
 
@@ -38,12 +37,15 @@ function timer() {
     else if (newSec === -1 && minutes.textContent <= 0 ) {
       seconds.textContent = "00"
       changeButton()
+      resetTime()
     }
     else {
       seconds.textContent = newSec.toString().padStart(2, "0")
     }
   } else {
-    if (running) {changeButton()}
+    if (running) {
+      changeButton()
+    }
   }
 }
 
